@@ -9,6 +9,8 @@ kml_file = path.join( \
 with open(kml_file) as f:
      root = parser.parse(f).getroot()
 
+writer = csv.writer(open("MapPlaces.csv", "wb"))
+
 def coordUnique(seq, idfun=None):
    # order preserving
    if idfun is None:
@@ -23,11 +25,13 @@ def coordUnique(seq, idfun=None):
        if marker in seen:
            continue
        seen[marker] = 1
+       coord = str(coord)
+       l = [float(x) for x in coord.split(' ')]
+       coord = l
        coord = list(coord)
        del(coord[2])
-       coord = str(coord)
-       coord = coord.split()
+       writer.writerow(list(coord))
        coordList.append(coord)
    return coordList
 
-print coordUnique(root)
+listCoords = coordUnique(root)
