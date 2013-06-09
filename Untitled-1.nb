@@ -1,0 +1,72 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1749,         62]
+NotebookOptionsPosition[      1388,         44]
+NotebookOutlinePosition[      1744,         60]
+CellTagsIndexPosition[      1701,         57]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  "\"\</Users/glassman/Documents/Engineering/Solidworks/Map/history-05-23-\
+2013.kml\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.579481604320465*^9, 3.5794816236513166`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Import", "::", "fmterr"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot import data as \[NoBreak]\\!\\(\\\"KML\\\"\\)\
+\[NoBreak] format. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\
+\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Import/fmterr\\\", ButtonNote -> \
+\\\"Import::fmterr\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5794816280428*^9, 3.579481667618104*^9}],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.579481628063724*^9, 3.579481667642417*^9}]
+}, Open  ]]
+},
+WindowSize->{838, 1006},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 20, \
+2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 214, 4, 28, "Input"],
+Cell[796, 28, 475, 10, 24, "Message"],
+Cell[1274, 40, 98, 1, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
