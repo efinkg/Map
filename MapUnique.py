@@ -4,7 +4,7 @@ from os import path
 import csv
 
 kml_file = path.join( \
-    '/Users/glassman/Documents/Engineering/Solidworks/Map/history-05-24-2013.kml')
+    '/Users/glassman/Documents/Engineering/Solidworks/Map/history.kml')
 
 with open(kml_file) as f:
      root = parser.parse(f).getroot()
