@@ -85,4 +85,4 @@ for name,xstops,ystops in zip(annotations[1::2],xstops[1::2],ystops[1::2]):
                 'center', verticalalignment='top',backgroundcolor='white')
 """
 
-canvas.print_figure('mapUS.png', dpi=200)
+canvas.print_figure('mapUS.ps', dpi=400)
