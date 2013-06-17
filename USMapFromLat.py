@@ -9,7 +9,7 @@ import csv
 from itertools import *
 
 #request section of Basemap in latitude longitude box
-m = Basemap(llcrnrlon= -120.5,\
+m = Basemap(llcrnrlon= -121.5,\
             llcrnrlat=24, \
             urcrnrlon= -65, \
             urcrnrlat = 46.5, \
@@ -71,11 +71,11 @@ m.plot(xstops, ystops,'ro')
 #Annotate
 for oddAnnotate,xOddStops,yOddStops,evenAnnotate,xEvenStops,yEvenStops in izip_longest(annotations[0::2],xstops[0::2],ystops[0::2],annotations[1::2],xstops[1::2],ystops[1::2]):
 #This is necessary because looping consecutively through xstops and ystops twice returns TypeError: 'float' object has no attribute '__getitem__'.  This generates six lists temporarily in the scope of the for loop.
-    plt.annotate(oddAnnotate,xy=(xOddStops,yOddStops),xytext=(xOddStops,yOddStops+70000),fontsize='6.75',horizontalalignment=
+    plt.annotate(oddAnnotate,xy=(xOddStops,yOddStops),xytext=(xOddStops,yOddStops+40000),fontsize='10',horizontalalignment=
                 'center', verticalalignment='bottom',backgroundcolor='white')
     if evenAnnotate == None:
         break
-    plt.annotate(evenAnnotate,xy=(xEvenStops,yEvenStops),xytext=(xEvenStops,yEvenStops-70000),fontsize='6.75',horizontalalignment=
+    plt.annotate(evenAnnotate,xy=(xEvenStops,yEvenStops),xytext=(xEvenStops,yEvenStops-70000),fontsize='10',horizontalalignment=
                 'center', verticalalignment='top',backgroundcolor='white')
 
 #Probably the more correct way to do things, where [::2] gives odds starting with index [0] and [1::2] gives evens starting with index [1]
