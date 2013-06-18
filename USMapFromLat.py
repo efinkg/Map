@@ -24,9 +24,10 @@ m.ax = fig.add_axes([0, 0, 1, 1])
 fig.set_size_inches((6/m.aspect, 8.))
 
 #generate map with coasts, countries, state boarders
-m.drawcoastlines(color='black')
-m.drawcountries(color='black')
-m.drawstates(color='black')
+m.drawmapboundary(fill_color='blue')
+m.drawcoastlines(color='silver')
+m.drawcountries(color='silver')
+m.drawstates(color='silver')
 
 #generate empty lats and longs lists
 latsList=[]
@@ -62,13 +63,17 @@ with open('Stops.csv', 'U') as csvfile:
 
 #plot tracking lists onto map
 x, y = m(lonsList, latsList)
-m.plot(x, y,'b-')
+m.plot(x, y,'0-')
 
 #plot stops lists onto map
 xstops, ystops = m(stopsLonsList, stopsLatsList)
-m.plot(xstops, ystops,'ro')
+m.plot(xstops, ystops,'o',markerfacecolor='red')
 
 #Annotate
+#These are currently too small on a 6" tall piece of metal, so they're
+#being removed until a larger version is in use.
+
+"""
 for oddAnnotate,xOddStops,yOddStops,evenAnnotate,xEvenStops,yEvenStops in izip_longest(annotations[0::2],xstops[0::2],ystops[0::2],annotations[1::2],xstops[1::2],ystops[1::2]):
 #This is necessary because looping consecutively through xstops and ystops twice returns TypeError: 'float' object has no attribute '__getitem__'.  This generates six lists temporarily in the scope of the for loop.
     plt.annotate(oddAnnotate,xy=(xOddStops,yOddStops),xytext=(xOddStops,yOddStops+40000),fontsize='10',horizontalalignment=
@@ -77,7 +82,7 @@ for oddAnnotate,xOddStops,yOddStops,evenAnnotate,xEvenStops,yEvenStops in izip_l
         break
     plt.annotate(evenAnnotate,xy=(xEvenStops,yEvenStops),xytext=(xEvenStops,yEvenStops-70000),fontsize='10',horizontalalignment=
                 'center', verticalalignment='top',backgroundcolor='white')
-
+"""
 #Probably the more correct way to do things, where [::2] gives odds starting with index [0] and [1::2] gives evens starting with index [1]
 """
 for name,xstops,ystops in zip(annotations[1::2],xstops[1::2],ystops[1::2]):
@@ -85,4 +90,4 @@ for name,xstops,ystops in zip(annotations[1::2],xstops[1::2],ystops[1::2]):
                 'center', verticalalignment='top',backgroundcolor='white')
 """
 
-canvas.print_figure('mapUS.ps', dpi=400)
+canvas.print_figure('mapUS.png', dpi=400)
