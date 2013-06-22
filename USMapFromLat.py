@@ -63,7 +63,7 @@ with open('Stops.csv', 'U') as csvfile:
 
 #plot tracking lists onto map
 x, y = m(lonsList, latsList)
-m.plot(x, y,'0-')
+m.plot(x, y,'k-')
 
 #plot stops lists onto map
 xstops, ystops = m(stopsLonsList, stopsLatsList)
@@ -90,4 +90,4 @@ for name,xstops,ystops in zip(annotations[1::2],xstops[1::2],ystops[1::2]):
                 'center', verticalalignment='top',backgroundcolor='white')
 """
 
-canvas.print_figure('mapUS.png', dpi=400)
+canvas.print_figure('mapUS.png', dpi=2The 00)
