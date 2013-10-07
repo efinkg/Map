@@ -48,6 +48,8 @@ with open('MapPlaces.csv') as csvfile:
         lats = float(row[1])
         latsList.append(lats)
 
+
+'''
 #Import previously generated Stops CSV File, Write to a new list of lats and longs
 with open('Stops.csv', 'U') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=',')
@@ -59,15 +61,18 @@ with open('Stops.csv', 'U') as csvfile:
         stopsLatsList.append(stopslats)
         locationName = str(row[2])
         annotations.append(locationName)
+'''
         
 
 #plot tracking lists onto map
 x, y = m(lonsList, latsList)
 m.plot(x, y,'k-')
 
+'''
 #plot stops lists onto map
 xstops, ystops = m(stopsLonsList, stopsLatsList)
 m.plot(xstops, ystops,'o',markerfacecolor='red')
+'''
 
 #Annotate
 #These are currently too small on a 6" tall piece of metal, so they're
@@ -90,4 +95,8 @@ for name,xstops,ystops in zip(annotations[1::2],xstops[1::2],ystops[1::2]):
                 'center', verticalalignment='top',backgroundcolor='white')
 """
 
+<<<<<<< HEAD
+canvas.print_figure('mapUS.ps', dpi=200)
+=======
 canvas.print_figure('mapUS.png', dpi=200)
+>>>>>>> b6aaf3105276aad99e182714e549ce7122996f38
