@@ -24,10 +24,10 @@ m.ax = fig.add_axes([0, 0, 1, 1])
 fig.set_size_inches((6/m.aspect, 8.))
 
 #generate map with coasts, countries, state boarders
-m.drawmapboundary(fill_color='blue')
-m.drawcoastlines(color='silver')
-m.drawcountries(color='silver')
-m.drawstates(color='silver')
+m.drawmapboundary(fill_color='white')
+m.drawcoastlines(color='black')
+m.drawcountries(color='black')
+m.drawstates(color='black')
 
 #generate empty lats and longs lists
 latsList=[]
@@ -90,4 +90,4 @@ for name,xstops,ystops in zip(annotations[1::2],xstops[1::2],ystops[1::2]):
                 'center', verticalalignment='top',backgroundcolor='white')
 """
 
-canvas.print_figure('mapUS.png', dpi=2The 00)
+canvas.print_figure('mapUS.png', dpi=200)
